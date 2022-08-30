@@ -1,7 +1,7 @@
 import requests
 
 proteins = []
-with open("PROT_DATA/PF04034_reduced.fasta", "r") as f:
+with open("PF04034_reduced.fasta", "r") as f:
     lines = f.readlines()
     for line in lines:
         if line.strip("\n").startswith(">"):
