@@ -1,12 +1,13 @@
 import requests
 
 proteins = []
-with open("PF04034_reduced.fasta", "r") as f:
+with open("PROT_DATA/PF04034_reduced.fasta", "r") as f:
     lines = f.readlines()
     for line in lines:
         if line.strip("\n").startswith(">"):
-            numba = line.find("_")
-            proteins.append(line[1:numba])
+            numba = line.find("(")
+            numbb = line.find(")")
+            proteins.append(line[numba+1:numbb])
 
 for i in range(len(proteins)):
     protein = proteins[i]
