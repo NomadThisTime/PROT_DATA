@@ -3,6 +3,7 @@ import requests
 proteins = []
 with open("PF04034_reduced.fasta", "r") as f:
     lines = f.readlines()
+
     for line in lines:
         if line.strip("\n").startswith(">"):
             numba = line.find("(")
